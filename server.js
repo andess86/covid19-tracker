@@ -1,3 +1,4 @@
+const csv = require('csvtojson');
 let { download } = require('./utils');
 
 var url =
@@ -5,3 +6,11 @@ var url =
 var dest = 'covid19.csv';
 
 download(url, dest, data => {});
+
+(async () => {
+  var jsons = await csv().fromFile(dest);
+  console.log(jsons);
+  return jsons;
+})().catch(err => {
+  console.log(err);
+});
