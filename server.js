@@ -14,20 +14,12 @@ let {
   confirmedRecoveries
 } = require('./consts');
 
-var job = schedule.scheduleJob('01 10 * * *', function() {
+var job = schedule.scheduleJob('10 13 * * *', function() {
   console.log('Fetching new data for confirmed Covid-19 cases.');
   download(confirmedCasesUrl, confirmedCases, data => {});
   download(confirmedDeathsUrl, confirmedDeaths, data => {});
   download(confirmedRecoveriesUrl, confirmedRecoveries, data => {});
 });
-
-// let csvData = (async fileName => {
-//   var jsons = await csv().fromFile(fileName);
-//   // console.log(jsons);
-//   return jsons;
-// })().catch(err => {
-//   console.log(err);
-// });
 
 let csvData = async fileName => {
   var jsons = await csv().fromFile(fileName);
