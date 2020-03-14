@@ -14,7 +14,7 @@ let {
   confirmedRecoveries
 } = require('./consts');
 
-var job = schedule.scheduleJob('10 13 * * *', function() {
+var job = schedule.scheduleJob('* 12 * * *', function() {
   console.log('Fetching new data for confirmed Covid-19 cases.');
   download(confirmedCasesUrl, confirmedCases, data => {});
   download(confirmedDeathsUrl, confirmedDeaths, data => {});
