@@ -16,6 +16,9 @@ const port = process.env.PORT || 3000;
 //   download(confirmedRecoveriesUrl, confirmedRecoveries, data => {});
 // });
 
+
+app.set('view engine', 'ejs');
+
 const covid19routes = require('./routes/covid19');
 app.use(covid19routes);
 
