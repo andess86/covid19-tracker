@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+      body {
+        background-color: antiquewhite;
+      }
+      .nav {
+        background-color: azure;
+        display: flex;
+        padding: 0.5em;
+        margin-top: 0px;
+        font-size: 24px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        justify-content: space-around;
+      }
+      a {
+        color: darkolivegreen;
+      }
+      a:hover {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <span>2019-nCoV Tracker</span>
+      <a href="https://ncov2019tracker.herokuapp.com/cases">Cases</a>
+      <a href="https://ncov2019tracker.herokuapp.com/deaths">Deaths</a>
+      <a href="https://ncov2019tracker.herokuapp.com/recoveries">Recoveries</a>
+    </div>
+    <canvas id="myChart"></canvas>
+    <script>
+      let list = <%-JSON.stringify(arrOfNewObjects)%>;
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+        // The data for our dataset
+        data: {
+          labels: list[17].timeSeries.map(function (a) { return a.x; }),
+          
+          datasets: [
+            
+            {
+              label: JSON.stringify(list[17].country),
+              // backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: list[17].timeSeries
+            },
+            // {
+            //   label: 'My First dataset',
+            //   borderColor: 'rgb(255, 130, 11)',
+            //   data: [0, 2,2 ,2, 1, 6, 9, 6]
+            // }
+          ]
+        },
+
+        // Configuration options go here
+        options: {}
+      });
+    </script>
+  </body>
+</html>
