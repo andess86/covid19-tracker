@@ -36,13 +36,13 @@ const massageData = data => {
 exports.getStartPage = async (req, res, next) => {
   data = await getCsvFromGithub(confirmedCasesUrl);
   arrOfNewObjects = massageData(data);
-  res.render('start', { arrOfNewObjects });
+  res.render('cases', { arrOfNewObjects });
 };
 
 exports.getConfirmedCases = async (req, res, next) => {
   data = await getCsvFromGithub(confirmedCasesUrl);
   arrOfNewObjects = massageData(data);
-  res.render('start', { arrOfNewObjects });
+  res.render('cases', { arrOfNewObjects });
 };
 
 exports.getConfirmedDeaths = async (req, res, next) => {

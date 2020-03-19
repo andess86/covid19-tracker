@@ -5,34 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <style>
-      body {
-        background-color: antiquewhite;
-      }
-      .nav {
-        background-color: azure;
-        display: flex;
-        padding: 0.5em;
-        margin-top: 0px;
-        font-size: 24px;
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: bold;
-        justify-content: space-around;
-      }
-      a {
-        color: darkolivegreen;
-      }
-      a:hover {
-        color: green;
-      }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div class="nav">
-      <span>Coronaspridning.nu</span>
+      <span class="logo">Coronaspridning.nu</span>
       <a href="/cases">Cases</a>
       <a href="/deaths">Deaths</a>
-      <a href="/recoveries">Recoveries</a>
+      <a class="active" href="/recoveries">Recoveries</a>
       <a href="/map">Map</a>
     </div>
     <canvas id="myChart"></canvas>

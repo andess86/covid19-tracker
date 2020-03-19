@@ -1,0 +1,25 @@
+body {
+  background-color: antiquewhite;
+}
+.nav {
+  background-color: azure;
+  display: flex;
+  padding: 0.5em;
+  margin-top: 0px;
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  justify-content: space-around;
+}
+a {
+  color: darkolivegreen;
+}
+a:hover {
+  color: green;
+}
+a.active {
+  color: red;
+}
+.logo:hover {
+  color:blue;
+}
