@@ -1,25 +1,36 @@
 body {
-  background-color: antiquewhite;
+  background-color: #E2E8ED;
+  margin: 0px;
 }
 .nav {
-  background-color: azure;
+
+  background-color: #A3B5BF;
   display: flex;
-  padding: 0.5em;
+  /* padding: 0.5em; */
   margin-top: 0px;
   font-size: 24px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  /* font-family: 'Courier New', Courier, monospace; */
   font-weight: bold;
   justify-content: space-around;
 }
 a {
-  color: darkolivegreen;
+  color: #425866;
+  padding: 8px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 a:hover {
-  color: green;
+  
+  background-color: #2C404C;
+  color: #E2E8ED;
 }
 a.active {
-  color: red;
+  background-color: #E2E8ED;
+  color: #121F26;
 }
 .logo:hover {
-  color:blue;
+  background-color: #A3B5BF;
+  color: #121F26;
 }
