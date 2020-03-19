@@ -12,7 +12,11 @@ body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   /* font-family: 'Courier New', Courier, monospace; */
   font-weight: bold;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+.links {
+  padding: 0px;
+  float: right;
 }
 a {
   color: #425866;
