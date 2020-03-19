@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -18,6 +19,9 @@ const port = process.env.PORT || 3000;
 
 
 app.set('view engine', 'ejs');
+// Express Middleware for serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 const covid19routes = require('./routes/covid19');
 app.use(covid19routes);

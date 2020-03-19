@@ -115,3 +115,8 @@ exports.getConfirmedRecoveries = async (req, res, next) => {
   console.table(arrOfNewObjects);
   res.render('recoveries', { arrOfNewObjects });
 };
+
+exports.getMapView = async (req, res, next) => {
+  res.render('map');
+  
+};
