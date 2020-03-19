@@ -39,27 +39,30 @@
     <script>
       let list = <%-JSON.stringify(arrOfNewObjects)%>;
       var ctx = document.getElementById('myChart').getContext('2d');
+       let datasets = [];
+       list.map(row => {
+        let a = {};
+        a.label = row.country;
+        a.borderColor = Math.floor(Math.random()*16777215).toString(16);
+        a.data = row.timeSeries;
+        // console.log(a);
+        datasets.push(a);
+       });
+       console.log(datasets);
       var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
         // The data for our dataset
         data: {
           labels: list[17].timeSeries.map(function (a) { return a.x; }),
-          
-          datasets: [
-            
-            {
+
+          datasets: [{
               label: JSON.stringify(list[17].country),
               // backgroundColor: 'rgb(255, 99, 132)',
               borderColor: 'rgb(255, 99, 132)',
               data: list[17].timeSeries
-            },
-            // {
-            //   label: 'My First dataset',
-            //   borderColor: 'rgb(255, 130, 11)',
-            //   data: [0, 2,2 ,2, 1, 6, 9, 6]
-            // }
-          ]
+            },]
+          // datasets
         },
 
         // Configuration options go here

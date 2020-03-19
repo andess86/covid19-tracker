@@ -48,7 +48,7 @@ function draw() {
   fill(255, 0, 10, 150);
   text('Date:' + ' ' + dataLength[iterator], -400, 250);
   // Framerate is 15fps, therefore devide by 15.
-  text('Dead:' + ' ' + Math.ceil(totalDeathsToday / 15), -100, 250);
+  text('Deaths:' + ' ' + Math.ceil(totalDeathsToday / 15), -100, 250);
   if (iterator < dataLength.length - 1) {
     iterator++;
   } else {
