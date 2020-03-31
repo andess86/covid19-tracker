@@ -14,13 +14,7 @@ function preload() {
     `https://api.mapbox.com/styles/v1/mapbox/dark-v9/static/0,0,${zoom},0,0/1024x512?access_token=pk.eyJ1IjoiYW5kZXNzODYiLCJhIjoiY2p3dzJ2NXozMW1xcTN6cDU1cmN5OTVkMSJ9.QusmuAsR11ZNzLtt0m-CsA`
   );
   deaths = loadStrings(
-    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv'
-  );
-  confirmed = loadStrings(
-    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv'
-  );
-  recovered = loadStrings(
-    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv'
+    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
   );
 }
 
@@ -70,7 +64,7 @@ function drawDeath() {
     var x = mercX(long) - centerX;
     var y = mercY(lat) - centerY;
     fill(255, 0, 10, 50);
-    ellipse(x, y, Number(dead) / 10, Number(dead) / 10);
+    ellipse(x, y, Number(dead) / 40, Number(dead) / 40);
     totalDeathsToday = totalDeathsToday + Number(dead);
   }
 }
