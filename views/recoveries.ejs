@@ -12,7 +12,7 @@
       <a class="logo" href="/">Coronaspridning.nu</a>
       <a href="/cases">Cases</a>
       <a href="/deaths">Deaths</a>
-      <a class="active" href="/recoveries">Recoveries</a>
+      <!-- <a class="active" href="/recoveries">Recoveries</a> -->
       <a href="/map">Map</a>
     </div>
     <canvas id="myChart"></canvas>
@@ -24,15 +24,15 @@
         type: 'line',
         // The data for our dataset
         data: {
-          labels: list[17].timeSeries.map(function (a) { return a.x; }),
+          labels: list[203].timeSeries.map(function (a) { return a.x; }),
           
           datasets: [
             
             {
-              label: JSON.stringify(list[17].country),
+              label: JSON.stringify(list[203].country),
               // backgroundColor: 'rgb(255, 99, 132)',
               borderColor: 'rgb(255, 99, 132)',
-              data: list[17].timeSeries
+              data: list[203].timeSeries
             },
             // {
             //   label: 'My First dataset',
